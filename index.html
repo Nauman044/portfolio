@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nauman Naseer | AI Automation Developer</title>
+<meta name="description" content="Nauman Naseer builds AI automations, chatbots and AI agents that handle customer messages, data entry and reports for businesses, plus the websites and tools around them.">
+<meta property="og:title" content="Nauman Naseer | AI Automation Developer">
+<meta property="og:description" content="AI chatbots, AI agents and automated workflows that take repetitive work off your team.">
+<meta property="og:image" content="assets/nauman.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#16202D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16202D;
+    --ink-2:#1F2B3C;
+    --ink-3:#2B3A50;
+    --steel:#566479;
+    --mist:#A9B5C5;
+    --fog:#E8ECF0;
+    --paper:#F6F7F9;
+    --white:#FFFFFF;
+    --signal:#F2C230;
+    --signal-deep:#A87F06;
+    --line:#D8DEE6;
+    --wa:#25D366;
+    --display:"Bricolage Grotesque", system-ui, sans-serif;
+    --body:"Instrument Sans", system-ui, sans-serif;
+    --r-lg:24px; --r-md:16px; --r-sm:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{font-family:var(--body);font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  button{font:inherit;color:inherit}
+  :focus-visible{outline:3px solid var(--signal-deep);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+  h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:700;max-width:22ch}
+  .lede{color:var(--steel);max-width:60ch;margin-top:16px;font-size:1.125rem}
+  .block{padding:112px 0}
+  .kicker{display:inline-block;font-weight:600;color:var(--signal-deep);margin-bottom:14px}
+  .on-dark .kicker{color:var(--signal)}
+  .on-dark .lede{color:var(--mist)}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 1rem var(--body);text-decoration:none;padding:14px 24px;border-radius:12px;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s;white-space:nowrap}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:#000}
+  .btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+  .btn-line:hover{background:var(--ink);color:#fff}
+  .btn-wa{background:var(--wa);color:#06301A}
+  .btn-wa:hover{background:#1EBE5A}
+  .btn svg{flex:none}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(246,247,249,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+  header.scrolled{border-bottom-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+  .brand{font-family:var(--display);font-weight:800;font-size:1.2rem;text-decoration:none;display:flex;align-items:center;gap:10px;flex:none}
+  .brand img{width:32px;height:32px}
+  .nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+  .nav ul a{text-decoration:none;font-weight:500;color:var(--steel);font-size:.98rem}
+  .nav ul a:hover{color:var(--ink)}
+  .nav ul .btn{color:#fff;padding:10px 18px;font-size:.95rem}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:10px;margin-right:-10px}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:transform .2s,opacity .2s}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* hero */
+  .hero{padding:64px 0 96px}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:10px;font-weight:500;color:var(--steel);margin-bottom:26px;background:#fff;border:1px solid var(--line);padding:7px 14px 7px 12px;border-radius:999px;font-size:.93rem}
+  .badge i{width:8px;height:8px;border-radius:50%;background:#2FA84F;box-shadow:0 0 0 4px rgba(47,168,79,.16)}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,4.4rem);font-weight:800;max-width:15ch}
+  .hero .lede{font-size:1.2rem;max-width:54ch}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+  .works-with{margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
+  .works-with p{font-size:.92rem;color:var(--steel);margin-bottom:12px}
+  .works-with ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px}
+  .works-with li{font-weight:600;font-size:.98rem;color:var(--ink)}
+
+  .portrait{position:relative;width:100%;max-width:400px;justify-self:end;isolation:isolate}
+  .portrait::before{content:"";position:absolute;inset:26px -26px -26px 26px;background:var(--ink);border-radius:28px;z-index:-1}
+  .portrait::after{content:"";position:absolute;width:104px;height:104px;right:-46px;top:-26px;background:var(--signal);border-radius:24px;z-index:-2}
+  .portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:24px}
+  .name-card{position:absolute;left:-40px;bottom:34px;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px -20px rgba(22,32,45,.5);border:1px solid var(--line)}
+  .name-card strong{display:block;font-family:var(--display);font-size:1.08rem}
+  .name-card span{color:var(--steel);font-size:.9rem}
+
+  /* flow demo */
+  .flow-sec{background:var(--ink);color:#fff}
+  .flow-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+  .tabs{display:inline-flex;background:var(--ink-2);border:1px solid var(--ink-3);border-radius:14px;padding:5px;gap:4px}
+  .tabs button{background:none;border:0;color:var(--mist);font-weight:600;padding:10px 18px;border-radius:10px;cursor:pointer;transition:background .2s,color .2s}
+  .tabs button[aria-selected="true"]{background:var(--signal);color:var(--ink)}
+  .flow{margin-top:56px;display:grid;grid-template-columns:1fr 64px 1.15fr 64px 1fr;align-items:stretch}
+  .node{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--r-md);padding:24px}
+  .node.ai{background:linear-gradient(var(--ink-2),var(--ink-2)) padding-box,linear-gradient(135deg,var(--signal),#6E5A16) border-box;border:1.5px solid transparent}
+  .node-label{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--mist);font-weight:600}
+  .node-ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--ink-3);flex:none}
+  .ai .node-ico{background:var(--signal)}
+  .node h3{font-size:1.25rem;margin-top:16px;font-weight:700}
+  .node p{color:var(--mist);margin-top:8px;font-size:.97rem}
+  .node ul{list-style:none;margin-top:14px;display:grid;gap:10px}
+  .node li{display:flex;gap:10px;font-size:.97rem}
+  .node li svg{flex:none;margin-top:4px}
+  .link{position:relative;align-self:center;height:2px;background:var(--ink-3);margin:0 6px}
+  .link::after{content:"";position:absolute;right:-2px;top:-4px;border:5px solid transparent;border-left:7px solid var(--ink-3)}
+  .pulse{position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:var(--signal);box-shadow:0 0 12px var(--signal);opacity:0}
+  .running .l1 .pulse{animation:travel 1.1s ease-in-out .2s both}
+  .running .l2 .pulse{animation:travel 1.1s ease-in-out 1.5s both}
+  .running .n2{animation:glow 1.2s ease 1.1s both}
+  .running .n3{animation:glow 1.2s ease 2.4s both}
+  @keyframes travel{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:calc(100% - 10px);opacity:0}}
+  @keyframes glow{0%{box-shadow:0 0 0 0 rgba(242,194,48,.0)}40%{box-shadow:0 0 0 6px rgba(242,194,48,.18)}100%{box-shadow:0 0 0 0 rgba(242,194,48,0)}}
+  .flow-note{margin-top:28px;color:var(--mist);font-size:.98rem;display:flex;gap:10px;align-items:center}
+  .flow-note b{color:#fff;font-weight:600}
+
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column}
+  .svc.lead{grid-column:1 / -1;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;border:2px solid var(--ink);padding:44px}
+  .svc-ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--fog);margin-bottom:22px}
+  .lead .svc-ico{background:var(--signal)}
+  .tag{display:inline-block;font-size:.85rem;font-weight:600;background:var(--ink);color:#fff;padding:4px 12px;border-radius:999px;margin-bottom:16px}
+  .svc h3{font-size:1.75rem;font-weight:700}
+  .lead h3{font-size:2.3rem}
+  .svc > p, .svc-intro > p{color:var(--steel);margin-top:12px;max-width:48ch}
+  .checks{list-style:none;margin-top:24px;display:grid;gap:0}
+  .lead .checks{margin-top:0;grid-template-columns:1fr 1fr;gap:0 32px;align-content:start}
+  .checks li{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:20px 1fr;gap:12px}
+  .checks li svg{margin-top:5px}
+  .checks strong{display:block;font-weight:600}
+  .checks span{color:var(--steel);font-size:.96rem}
+
+  /* use cases */
+  .usecases{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .uc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:2px solid var(--ink)}
+  .uc{padding:28px 24px 8px 0}
+  .uc + .uc{padding-left:24px;border-left:1px solid var(--line)}
+  .uc h3{font-size:1.3rem;font-weight:700;display:flex;align-items:center;gap:10px}
+  .uc h3 svg{flex:none}
+  .uc ul{list-style:none;margin-top:16px;display:grid;gap:12px}
+  .uc li{color:var(--steel);font-size:.98rem;padding-left:16px;position:relative}
+  .uc li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:2px;background:var(--signal-deep);transform:rotate(45deg)}
+
+  /* projects */
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+  .proj{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column}
+  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .proj-mark{width:56px;height:56px;border-radius:16px;background:var(--ink);display:grid;place-items:center;flex:none}
+  .live{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:#1C7A3A;background:#E6F5EB;padding:5px 12px;border-radius:999px}
+  .live i{width:7px;height:7px;border-radius:50%;background:#2FA84F}
+  .proj h3{font-size:2rem;font-weight:700;margin-top:24px}
+  .proj .sub{color:var(--steel);margin-top:4px}
+  .cs{margin-top:24px;display:grid;gap:18px}
+  .cs h4{font:600 .95rem var(--body);color:var(--ink)}
+  .cs p{color:var(--steel);margin-top:4px;font-size:.98rem}
+  .feat{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .feat li{font-size:.9rem;padding:6px 12px;border-radius:8px;background:var(--paper);border:1px solid var(--line)}
+  .proj-foot{margin-top:auto;padding-top:28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .proj-foot .url{color:var(--steel);font-size:.92rem}
+  .proj.cta{background:var(--signal);border-color:var(--signal);grid-column:1 / -1;flex-direction:row;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .proj.cta h3{margin-top:0;font-size:1.9rem}
+  .proj.cta p{color:#4A3D10;margin-top:8px;max-width:56ch}
+
+  /* process */
+  .process{background:var(--ink);color:#fff}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;list-style:none;counter-reset:s}
+  .steps li{padding:30px 28px 8px 0;border-top:2px solid var(--ink-3);position:relative;counter-increment:s}
+  .steps li::before{content:counter(s);font-family:var(--display);font-weight:800;width:38px;height:38px;border-radius:50%;background:var(--signal);color:var(--ink);display:grid;place-items:center;position:absolute;top:-20px;left:0}
+  .steps h3{font-size:1.3rem;margin-top:20px}
+  .steps p{color:var(--mist);margin-top:8px;font-size:.98rem}
+
+  /* toolkit */
+  .tk-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+  .tk-groups{display:grid;gap:30px}
+  .tk-groups h3{font:600 1.05rem var(--body);letter-spacing:0;display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .tk-groups h3 small{font-weight:500;color:var(--steel);font-size:.9rem}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chips span{padding:8px 14px;border-radius:10px;background:#fff;border:1px solid var(--line);font-weight:500;font-size:.95rem}
+  .chips.primary span{background:var(--ink);border-color:var(--ink);color:#fff}
+
+  /* faq */
+  .faq{background:#fff;border-top:1px solid var(--line)}
+  .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+  details{border-bottom:1px solid var(--line)}
+  details:first-child{border-top:2px solid var(--ink)}
+  summary{list-style:none;cursor:pointer;padding:22px 0;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;gap:24px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);position:relative;transition:transform .25s,background .2s}
+  summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
+  summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s}
+  details[open] summary .pm{background:var(--signal);border-color:var(--signal)}
+  details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+  details p{color:var(--steel);padding:0 48px 24px 0;max-width:64ch}
+
+  /* contact */
+  .contact{background:var(--signal)}
+  .contact .kicker{color:var(--ink)}
+  .contact .lede{color:#4A3D10}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .wa-card{margin-top:32px;background:var(--ink);color:#fff;border-radius:20px;padding:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .wa-card img{width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:3px solid var(--wa);flex:none}
+  .wa-card div{flex:1;min-width:150px}
+  .wa-card strong{display:block;font-family:var(--display);font-size:1.15rem}
+  .wa-card span{color:var(--mist);font-size:.95rem}
+  .reply{margin-top:20px;font-size:.95rem;color:#4A3D10;display:flex;gap:8px;align-items:center}
+  form{background:#fff;border-radius:22px;padding:32px;border:2px solid var(--ink)}
+  form h3{font-size:1.4rem;margin-bottom:20px}
+  label{display:block;font-weight:600;font-size:.95rem;margin-bottom:6px}
+  .field{margin-bottom:18px}
+  input,select,textarea{width:100%;font:inherit;font-size:1rem;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);background:#fff}
+  textarea{min-height:120px;resize:vertical}
+  form .btn{width:100%}
+  .form-note{font-size:.9rem;color:var(--steel);margin-top:12px;text-align:center}
+
+  footer{background:var(--ink);color:var(--mist);padding:40px 0 110px;font-size:.95rem}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer .brand{color:#fff}
+  footer nav{display:flex;gap:22px;flex-wrap:wrap}
+  footer nav a{text-decoration:none}
+  footer nav a:hover{color:#fff}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;padding:14px 20px 14px 16px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(18,140,70,.6);transition:transform .15s}
+  .wa-float:hover{transform:translateY(-2px)}
+
+  /* ------- responsive ------- */
+  @media (max-width:1080px){
+    .nav ul{gap:20px}
+    .uc-grid{grid-template-columns:1fr 1fr;border-top:0;gap:0}
+    .uc{border-top:2px solid var(--ink);padding:28px 24px 28px 0}
+    .uc + .uc{padding-left:0;border-left:0}
+    .uc:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+  }
+  @media (max-width:960px){
+    .block{padding:88px 0}
+    .menu-toggle{display:block}
+    .nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 24px;border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(22,32,45,.25)}
+    .nav ul.open{display:flex}
+    .nav ul a{display:block;padding:14px 0;font-size:1.05rem;border-bottom:1px solid var(--line)}
+    .nav ul .btn{display:flex;margin-top:16px;padding:14px;border-bottom:0;color:#fff}
+    .hero{padding:40px 0 88px}
+    .hero-grid{grid-template-columns:1fr;gap:64px}
+    .portrait{justify-self:center;max-width:340px;margin-right:26px}
+    .flow{grid-template-columns:1fr;gap:0}
+    .link{width:2px;height:44px;margin:6px auto;justify-self:center}
+    .link::after{right:auto;left:-4px;top:auto;bottom:-2px;border:5px solid transparent;border-top:7px solid var(--ink-3)}
+    .pulse{left:-4px;top:0}
+    @keyframes travel{0%{top:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:calc(100% - 10px);opacity:0}}
+    .svc-grid,.proj-grid{grid-template-columns:1fr}
+    .svc.lead{grid-template-columns:1fr;gap:28px;padding:32px}
+    .steps{grid-template-columns:1fr 1fr;row-gap:48px}
+    .tk-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 16px}
+    .block{padding:72px 0}
+    .nav ul{padding:8px 16px 20px}
+    h2{font-size:clamp(1.85rem,8vw,2.4rem)}
+    .lede,.hero .lede{font-size:1.05rem}
+    .actions .btn{flex:1 1 100%}
+    .portrait{max-width:280px}
+    .portrait::after{right:-30px;width:84px;height:84px}
+    .name-card{left:-14px;bottom:20px;padding:12px 14px}
+    .tabs{display:flex;width:100%}
+    .tabs button{flex:1;padding:10px 6px;font-size:.92rem}
+    .node{padding:20px}
+    .svc,.svc.lead,.proj{padding:24px 20px}
+    .lead h3{font-size:1.9rem}
+    .lead .checks{grid-template-columns:1fr}
+    .uc-grid{grid-template-columns:1fr}
+    .uc:nth-child(even){padding-left:0;border-left:0}
+    .uc{padding:24px 0}
+    .proj h3{font-size:1.7rem}
+    .proj.cta{flex-direction:column;align-items:flex-start}
+    .proj.cta .btn{width:100%}
+    .steps{grid-template-columns:1fr}
+    details p{padding-right:0}
+    summary{font-size:1.02rem}
+    form{padding:22px 18px}
+    footer .wrap{flex-direction:column;align-items:flex-start}
+    .wa-float span{display:none}
+    .wa-float{padding:15px;right:16px;bottom:16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.01c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.2-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.74 1.22 1.58 1.97 1.09.97 2 1.27 2.29 1.41.29.14.46.12.63-.07.17-.2.72-.84.92-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.37z"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="#A87F06" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check-y" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="#F2C230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" fill="currentColor"/></symbol>
+</svg>
+
+<header id="hdr">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top" class="brand"><img src="assets/favicon.svg" alt="" width="32" height="32">Nauman Naseer</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#automate">What I automate</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="btn btn-dark">Book a free call</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge"><i></i>Taking new automation projects</div>
+        <h1>I automate the repetitive work in your business with AI.</h1>
+        <p class="lede">I'm Nauman Naseer, an AI automation developer. I build chatbots, AI agents and automated workflows that reply to customers, handle data entry and prepare reports, so your team can focus on the work that matters.</p>
+        <div class="actions">
+          <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+          <a href="#automate" class="btn btn-line">See what I can automate</a>
+        </div>
+        <div class="works-with">
+          <p>Connects with the tools you already use</p>
+          <ul>
+            <li>WhatsApp</li><li>Gmail</li><li>Google Sheets</li><li>OpenAI</li><li>Claude</li><li>n8n</li><li>Make</li><li>Zapier</li>
+          </ul>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="assets/nauman.jpg" alt="Portrait of Nauman Naseer" width="860" height="1121">
+        <div class="name-card"><strong>Nauman Naseer</strong><span>AI automation developer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW DEMO -->
+  <section class="flow-sec block on-dark" aria-labelledby="flow-title">
+    <div class="wrap">
+      <div class="flow-head">
+        <div>
+          <span class="kicker">How an automation works</span>
+          <h2 id="flow-title">Something happens, AI handles it, the work gets done.</h2>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Example automations">
+          <button role="tab" aria-selected="true" data-flow="sales">Sales</button>
+          <button role="tab" aria-selected="false" data-flow="support" tabindex="-1">Support</button>
+          <button role="tab" aria-selected="false" data-flow="ops" tabindex="-1">Operations</button>
+        </div>
+      </div>
+
+      <div class="flow running" id="flow" role="tabpanel" aria-live="polite">
+        <div class="node n1">
+          <div class="node-label"><span class="node-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2.2" stroke-linecap="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>When this happens</div>
+          <h3 data-k="t1">A new enquiry arrives on WhatsApp</h3>
+          <p data-k="d1">Day or night, from your ads, website or a referral.</p>
+        </div>
+        <div class="link l1" aria-hidden="true"><span class="pulse"></span></div>
+        <div class="node ai n2">
+          <div class="node-label"><span class="node-ico"><svg width="18" height="18" style="color:#16202D" aria-hidden="true"><use href="#i-spark"/></svg></span>AI takes over</div>
+          <h3 data-k="t2">AI replies, answers questions and qualifies the lead</h3>
+          <p data-k="d2">It uses your prices, services and FAQs, and asks the questions your sales team would ask.</p>
+        </div>
+        <div class="link l2" aria-hidden="true"><span class="pulse"></span></div>
+        <div class="node n3">
+          <div class="node-label"><span class="node-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Done for you</div>
+          <ul data-k="out">
+            <li><svg width="16" height="16"><use href="#i-check-y"/></svg>Lead saved in your CRM or Google Sheet</li>
+            <li><svg width="16" height="16"><use href="#i-check-y"/></svg>Follow-up message scheduled</li>
+            <li><svg width="16" height="16"><use href="#i-check-y"/></svg>Hot leads sent to you instantly</li>
+          </ul>
+        </div>
+      </div>
+      <p class="flow-note"><svg width="18" height="18" style="color:#F2C230;flex:none" aria-hidden="true"><use href="#i-spark"/></svg><span><b>You stay in control.</b> For important steps, the AI can ask for your approval before it sends anything.</span></p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="block" id="services">
+    <div class="wrap">
+      <span class="kicker">Services</span>
+      <h2>AI automation first, with the tools and websites to support it.</h2>
+      <p class="lede">Every project starts with one question: what is your team doing by hand that a system could do for them?</p>
+
+      <div class="svc-grid">
+        <article class="svc lead">
+          <div class="svc-intro">
+            <span class="tag">Main service</span>
+            <div class="svc-ico" aria-hidden="true"><svg width="26" height="26" style="color:#16202D"><use href="#i-spark"/></svg></div>
+            <h3>AI automation</h3>
+            <p>Custom AI systems that take over repetitive tasks across sales, support and operations. Built around your process, connected to the apps you already use.</p>
+          </div>
+          <ul class="checks">
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>AI chatbots</strong><span>For WhatsApp and your website. They answer customers 24/7 in your tone.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>AI agents</strong><span>Assistants that read, decide and take action across your apps.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Workflow automation</strong><span>n8n, Make and Zapier flows that move data between your tools automatically.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Chat with your documents</strong><span>An AI that answers questions from your files, policies and manuals.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Data extraction</strong><span>Pull details from invoices, emails and forms into clean spreadsheets.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Automatic reports</strong><span>Daily or weekly summaries written and sent without anyone lifting a finger.</span></div></li>
+          </ul>
+        </article>
+
+        <article class="svc">
+          <div class="svc-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16202D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></div>
+          <h3>Custom business tools</h3>
+          <p>Software built for exactly how your business runs, with AI built in where it helps.</p>
+          <ul class="checks">
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>CRMs and lead systems</strong><span>Leads, calls, follow-ups and team roles in one place.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>POS and billing</strong><span>Orders, bills and sales for shops, hotels and restaurants.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Dashboards and admin panels</strong><span>All your numbers on one screen.</span></div></li>
+          </ul>
+        </article>
+
+        <article class="svc">
+          <div class="svc-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16202D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="m9 13-2 2 2 2M15 13l2 2-2 2"/></svg></div>
+          <h3>Website development</h3>
+          <p>Fast, professional websites that turn visitors into enquiries, with an AI assistant if you want one.</p>
+          <ul class="checks">
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Business websites</strong><span>Clear pages, contact options and search-friendly structure.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Landing pages</strong><span>One focused page for a product, offer or ad campaign.</span></div></li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg><div><strong>Web apps</strong><span>Logins, user roles and databases when a site needs to do more.</span></div></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="usecases block" id="automate">
+    <div class="wrap">
+      <span class="kicker">What I automate</span>
+      <h2>If your team does it the same way every day, AI can probably do it.</h2>
+      <p class="lede">A few of the tasks businesses hand over to automation most often.</p>
+
+      <div class="uc-grid">
+        <div class="uc">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A87F06" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Sales</h3>
+          <ul>
+            <li>Reply to every new lead within seconds</li>
+            <li>Qualify leads and send hot ones to you</li>
+            <li>Send follow-ups so no lead goes cold</li>
+            <li>Write personalised proposals and quotes</li>
+          </ul>
+        </div>
+        <div class="uc">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A87F06" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Customer support</h3>
+          <ul>
+            <li>Answer common questions 24/7</li>
+            <li>Track orders and bookings on request</li>
+            <li>Hand difficult cases to a real person</li>
+            <li>Collect reviews and feedback</li>
+          </ul>
+        </div>
+        <div class="uc">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A87F06" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 0 1-4 0v-.1A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3.2 14H3a2 2 0 0 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 9 4.6 1.7 1.7 0 0 0 10 3.1V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.7 1.7 0 0 0 19.4 9 1.7 1.7 0 0 0 21 10h.1a2 2 0 0 1 0 4H21a1.7 1.7 0 0 0-1.6 1z"/></svg>Operations</h3>
+          <ul>
+            <li>Read invoices and receipts into sheets</li>
+            <li>Sync data between apps automatically</li>
+            <li>Create daily and weekly reports</li>
+            <li>Send payment and task reminders</li>
+          </ul>
+        </div>
+        <div class="uc">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A87F06" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8z"/></svg>Marketing</h3>
+          <ul>
+            <li>Draft social posts and captions</li>
+            <li>Turn one article into many formats</li>
+            <li>Find and collect leads from the web</li>
+            <li>Write and send email campaigns</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="block" id="work">
+    <div class="wrap">
+      <span class="kicker">Projects</span>
+      <h2>Real systems running for real businesses.</h2>
+      <p class="lede">Both are live. Open them and take a look.</p>
+
+      <div class="proj-grid">
+        <article class="proj">
+          <div class="proj-top">
+            <div class="proj-mark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <h3>Dispatch Link</h3>
+          <p class="sub">Lead CRM and dispatch platform for trucking companies</p>
+          <div class="cs">
+            <div><h4>The problem</h4><p>Dispatch companies kept leads in spreadsheets, made calls from personal phones and tracked loads in a separate system. Managers had no clear view of who was doing what.</p></div>
+            <div><h4>What I built</h4><p>One platform where sales agents process and call leads, dispatchers manage carriers and loads, and owners monitor the whole team, each with their own login and access.</p></div>
+            <div><h4>Key features</h4>
+              <ul class="feat"><li>Lead scanning by MC range</li><li>One-click calling</li><li>Automatic follow-ups</li><li>Email proposals</li><li>Loads and invoices</li><li>Calling leaderboard</li><li>Shift reports</li><li>Company licences</li></ul>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <a class="btn btn-dark" href="https://dispatchlink.online/" target="_blank" rel="noopener">Visit live site<svg width="16" height="16" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <span class="url">dispatchlink.online</span>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <div class="proj-mark" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18"/><path d="M5 11a7 7 0 0 1 14 0"/><path d="M12 4V2.5"/><path d="M2 15h20"/><path d="M6 15v4M18 15v4"/></svg></div>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <h3>Hotel POS</h3>
+          <p class="sub">Point-of-sale system for hotels and restaurants</p>
+          <div class="cs">
+            <div><h4>The problem</h4><p>Restaurants taking orders on paper lost track of tables, sent unclear tickets to the kitchen and had to add up the day's sales by hand.</p></div>
+            <div><h4>What I built</h4><p>A browser-based POS that handles the full flow from table to kitchen to bill, with reports at the end of the day. Nothing to install, and it works on any device.</p></div>
+            <div><h4>Key features</h4>
+              <ul class="feat"><li>Table management</li><li>Kitchen screen</li><li>Menu with categories</li><li>Sold-out switch</li><li>Orders and bills</li><li>Reservations</li><li>Expenses</li><li>Sales reports</li></ul>
+            </div>
+          </div>
+          <div class="proj-foot">
+            <a class="btn btn-dark" href="https://nauman044.github.io/Hotel" target="_blank" rel="noopener">Visit live site<svg width="16" height="16" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <span class="url">nauman044.github.io/Hotel</span>
+          </div>
+        </article>
+
+        <article class="proj cta">
+          <div>
+            <h3>Your business could be next.</h3>
+            <p>Tell me which task eats up the most time each week. I'll tell you honestly whether AI can take it over and what it would take.</p>
+          </div>
+          <a class="btn btn-dark" data-wa href="#" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Discuss your idea</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process block on-dark" id="process">
+    <div class="wrap">
+      <span class="kicker">Process</span>
+      <h2>From first call to a working automation.</h2>
+      <p class="lede">A fixed price agreed upfront, progress you can see, and support after launch.</p>
+      <ol class="steps">
+        <li><h3>Free discovery call</h3><p>We go through your daily work and find the tasks worth automating first.</p></li>
+        <li><h3>Plan and quote</h3><p>You get a clear plan of what the system will do, a fixed price and a delivery date.</p></li>
+        <li><h3>Build and test</h3><p>I build it, test it on your real data and share progress along the way.</p></li>
+        <li><h3>Launch and support</h3><p>I set it live, train your team, and fix any issues free for 30 days.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- TOOLKIT -->
+  <section class="block" id="toolkit">
+    <div class="wrap tk-grid">
+      <div>
+        <span class="kicker">Toolkit</span>
+        <h2>The right tool for each job.</h2>
+        <p class="lede">I work across the full stack, from AI models to the code underneath, so I can build whatever your automation needs without handing parts off to someone else.</p>
+      </div>
+      <div class="tk-groups">
+        <div><h3>AI and automation <small>Core</small></h3><div class="chips primary"><span>OpenAI API</span><span>Claude API</span><span>AI agents</span><span>LangChain</span><span>RAG</span><span>n8n</span><span>Make</span><span>Zapier</span></div></div>
+        <div><h3>Integrations</h3><div class="chips"><span>WhatsApp Business API</span><span>Gmail and Google Workspace</span><span>Google Sheets</span><span>Apps Script</span><span>Telegram bots</span><span>Webhooks and REST APIs</span></div></div>
+        <div><h3>Development</h3><div class="chips"><span>Python</span><span>JavaScript</span><span>Node.js</span><span>React</span><span>HTML and CSS</span><span>SQL</span><span>Firebase</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq block" id="faq">
+    <div class="wrap faq-grid">
+      <div>
+        <span class="kicker">FAQ</span>
+        <h2>Questions clients often ask</h2>
+        <p class="lede">Have a different question? Ask me on WhatsApp.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>Do I need any technical knowledge?<span class="pm" aria-hidden="true"></span></summary>
+          <p>No. You explain how your work is done today, and I handle the technical side. When it's ready, I show you how to use it in plain language.</p>
+        </details>
+        <details>
+          <summary>Will I have to change the tools I use?<span class="pm" aria-hidden="true"></span></summary>
+          <p>Usually not. I connect the automation to what you already use, like WhatsApp, Gmail, Google Sheets or your CRM, so your team keeps working the way it does now.</p>
+        </details>
+        <details>
+          <summary>What if the AI gets something wrong?<span class="pm" aria-hidden="true"></span></summary>
+          <p>I test every automation on your real cases before launch. For sensitive steps, like sending a quote or a payment reminder, I add an approval step so a person checks it first.</p>
+        </details>
+        <details>
+          <summary>Is my business data safe?<span class="pm" aria-hidden="true"></span></summary>
+          <p>I use official APIs, give the automation access only to what it needs, and set everything up in your own accounts. You keep full ownership and control.</p>
+        </details>
+        <details>
+          <summary>How long does a project take, and what does it cost?<span class="pm" aria-hidden="true"></span></summary>
+          <p>A simple automation can be ready in a few days. Larger systems take a few weeks. The price depends on scope, and you always get a fixed quote before any work starts.</p>
+        </details>
+        <details>
+          <summary>What happens after launch?<span class="pm" aria-hidden="true"></span></summary>
+          <p>Fixes are free for 30 days. After that, you can choose a monthly support plan, or contact me whenever you want changes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact block" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="kicker">Contact</span>
+        <h2>Let's find the first task to automate.</h2>
+        <p class="lede">Book a free call. We'll look at your daily work together and pick the automation that saves the most time.</p>
+        <div class="wa-card">
+          <img src="assets/nauman.jpg" alt="">
+          <div><strong>Message me on WhatsApp</strong><span>+92 370 0684849</span></div>
+          <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Open chat</a>
+        </div>
+        <p class="reply"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>I usually reply the same day.</p>
+      </div>
+      <form id="contact-form">
+        <h3>Tell me about your project</h3>
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="biz">Business name</label><input id="biz" name="biz" autocomplete="organization" placeholder="Optional"></div>
+        <div class="field"><label for="type">What do you need?</label>
+          <select id="type" name="type">
+            <option>AI automation or chatbot</option>
+            <option>A custom business tool</option>
+            <option>A website</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="msg">What would you like to automate?</label><textarea id="msg" name="msg" required placeholder="For example: we answer the same customer questions on WhatsApp all day."></textarea></div>
+        <button class="btn btn-wa" type="submit"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp</button>
+        <p class="form-note">Opens WhatsApp with your message ready to send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand"><img src="assets/favicon.svg" alt="" width="28" height="28">Nauman Naseer</a>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a><a href="#work">Projects</a><a href="#faq">FAQ</a><a href="https://github.com/nauman044" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <span>© <span id="yr"></span> Nauman Naseer</span>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" target="_blank" rel="noopener" aria-label="Chat with Nauman on WhatsApp">
+  <svg width="26" height="26" aria-hidden="true"><use href="#i-wa"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
+<script>
+  // WhatsApp number in international format (0370... -> 92370...)
+  const WA_NUMBER = "923700684849";
+  const waLink = t => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`;
+  document.querySelectorAll('[data-wa]').forEach(a => {
+    a.href = waLink("Hi Nauman, I saw your portfolio and would like to discuss an automation project.");
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const biz = f.biz.value ? ` from ${f.biz.value}` : '';
+    const text = `Hi Nauman, I'm ${f.name.value}${biz}.\nI need: ${f.type.value}\n\n${f.msg.value}`;
+    window.open(waLink(text), '_blank', 'noopener');
+  });
+
+  // flow demo
+  const flows = {
+    sales:{t1:"A new enquiry arrives on WhatsApp",d1:"Day or night, from your ads, website or a referral.",
+      t2:"AI replies, answers questions and qualifies the lead",d2:"It uses your prices, services and FAQs, and asks the questions your sales team would ask.",
+      out:["Lead saved in your CRM or Google Sheet","Follow-up message scheduled","Hot leads sent to you instantly"]},
+    support:{t1:"A customer emails a question",d1:"About an order, a booking, a refund or how something works.",
+      t2:"AI finds the answer in your documents and writes a reply",d2:"It reads your policies, manuals and past answers, and replies in your brand's tone.",
+      out:["Reply sent, or sent to you for approval","Ticket logged with a short summary","Hard cases passed to your team"]},
+    ops:{t1:"An invoice lands in your Gmail",d1:"As a PDF, an image or text in the email itself.",
+      t2:"AI reads it and pulls out the details",d2:"Vendor, invoice number, amount and due date, checked against what you expect.",
+      out:["New row added to your accounts sheet","File saved in the right Drive folder","Reminder sent before the due date"]}
+  };
+  const flowEl = document.getElementById('flow');
+  const tabs = document.querySelectorAll('.tabs [role="tab"]');
+  const check = '<svg width="16" height="16"><use href="#i-check-y"/></svg>';
+  function showFlow(key){
+    const f = flows[key];
+    ['t1','d1','t2','d2'].forEach(k => flowEl.querySelector(`[data-k="${k}"]`).textContent = f[k]);
+    flowEl.querySelector('[data-k="out"]').innerHTML = f.out.map(o => `<li>${check}${o}</li>`).join('');
+    tabs.forEach(t => { const on = t.dataset.flow === key; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+    flowEl.classList.remove('running'); void flowEl.offsetWidth; flowEl.classList.add('running');
+  }
+  tabs.forEach((t,i) => {
+    t.addEventListener('click', () => showFlow(t.dataset.flow));
+    t.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      showFlow(n.dataset.flow); n.focus();
+    });
+  });
+  // replay the pulse when the section scrolls into view
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ flowEl.classList.remove('running'); void flowEl.offsetWidth; flowEl.classList.add('running'); } }), {threshold:.4}).observe(flowEl);
+  }
+
+  // header + menu
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 8), {passive:true});
+  const toggle = document.querySelector('.menu-toggle'), menu = document.getElementById('menu');
+  function setMenu(open){
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
